@@ -58,20 +58,9 @@ class _FineBarChart extends State<FineBarChart> {
     return Container(
       padding: const EdgeInsets.all(8),
       width: MediaQuery.of(context).size.width,
-      margin: const EdgeInsets.only(left: 12, right: 12),
       decoration: BoxDecoration(
         color: widget.backgroundColors,
-        borderRadius: const BorderRadius.all(Radius.circular(16)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.6),
-            blurRadius: 16.0, // soften the shadow
-            offset: const Offset(
-              2.0, // Move to right 10  horizontally
-              2.0, // Move to bottom 10 Vertically
-            ),
-          )
-        ],
+        borderRadius: const BorderRadius.all(Radius.circular(30)),
       ),
       child: Row(children: [
         for (int i = 0; i < widget.barValue!.length; i++)
@@ -102,7 +91,7 @@ class _FineBarChart extends State<FineBarChart> {
                         progressColor: widget.barColors![i]),
                   ),
                   const SizedBox(
-                    height: 5,
+                    height: 15,
                   ),
                   widget.isBottomNameDisable == true
                       ? Container()
